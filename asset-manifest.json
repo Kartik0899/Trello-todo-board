@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Kartik0899/Trello-todo-board/static/css/main.b13ef27b.css",
+    "main.js": "/Kartik0899/Trello-todo-board/static/js/main.5bef6a5e.js",
+    "index.html": "/Kartik0899/Trello-todo-board/index.html",
+    "main.b13ef27b.css.map": "/Kartik0899/Trello-todo-board/static/css/main.b13ef27b.css.map",
+    "main.5bef6a5e.js.map": "/Kartik0899/Trello-todo-board/static/js/main.5bef6a5e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b13ef27b.css",
+    "static/js/main.5bef6a5e.js"
+  ]
+}
