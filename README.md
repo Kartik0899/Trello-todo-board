@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# 🚀 Trello-Style Todo Board
+A simple Trello-style Todo Board built with React, Tailwind CSS, and react-beautiful-dnd for drag-and-drop functionality. It allows users to add, update, delete, and move tasks between Pending and Completed lanes while persisting the changes via API calls.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📌 Features
+- ✅ Drag and drop todos between lanes using react-beautiful-dnd
+- ✅ Add new todos with a controlled input form
+- ✅ Edit and delete todos directly from the UI
+- ✅ API integration with dummyjson.com for fetching, updating, and deleting todos
+- ✅ Loader component to indicate loading state
+- ✅ Clean UI built with Tailwind CSS
 
-## Available Scripts
+# 🛠️ Getting Started
+1️⃣ Clone the Repository
+```
+git clone https://github.com/yourusername/trello-todo-board.git
+cd trello-todo-board
+```
+2️⃣ Install Dependencies
+```
+npm install
+```
 
-In the project directory, you can run:
+3️⃣ Start the Development Server
+```
+npm start
+```
 
-### `npm start`
+# 📌 Approach Taken
+- Component-Based Design: The project follows a modular approach, breaking down UI elements into reusable components (Board, Lane, TodoCard, etc.).
+- State Management: useState is used to handle local UI updates before making API calls.
+- Drag & Drop Handling: Implemented using react-beautiful-dnd, ensuring smooth interactions and intuitive task movements.
+- Optimistic UI Updates: When a user moves a task, the UI updates immediately before sending the backend request, enhancing performance.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 🎯 Design Decisions & Patterns
+1️⃣ API Handling & State Management
+- API calls are abstracted into a services/api.js file to keep network logic separate from UI components.
+- Used useEffect for initial data fetching to populate the todo board on load.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2️⃣ Drag-and-Drop Logic
+- The onDragEnd function updates the state before making an API request to reduce perceived lag.
+- Only updates the backend if a valid destination is detected.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3️⃣ Performance Optimizations
+- Minimized re-renders by only updating the specific todo that changes.
+- Used key-based rendering for smooth UI transitions.
+- Batch state updates to improve performance.
